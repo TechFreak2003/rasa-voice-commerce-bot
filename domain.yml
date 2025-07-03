@@ -1,0 +1,24 @@
+version: "3.1"
+
+intents:
+  - add_to_cart
+  - checkout
+
+entities:
+  - item
+
+slots:
+  item:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: item
+
+actions:
+  - action_add_to_cart
+  - action_checkout
+
+responses:
+  utter_ask_item:
+    - text: "Which item would you like to add to the cart?"

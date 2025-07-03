@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pkl
+*.db
+.env
+*.log
+models/
+.rasa/
+.data/
+.DS_Store
+*.sqlite3

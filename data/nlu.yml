@@ -1,0 +1,15 @@
+version: "3.1"
+nlu:
+  - intent: add_to_cart
+    examples: |
+      - add [shoes](item) to my cart
+      - I want to buy a [smartphone](item)
+      - please add a [laptop](item)
+      - put [black hoodie](item) in the cart
+
+  - intent: checkout
+    examples: |
+      - checkout
+      - proceed to checkout
+      - pay now
+      - I want to complete the order
