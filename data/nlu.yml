@@ -1,15 +1,171 @@
 version: "3.1"
-nlu:
-  - intent: add_to_cart
-    examples: |
-      - add [shoes](item) to my cart
-      - I want to buy a [smartphone](item)
-      - please add a [laptop](item)
-      - put [black hoodie](item) in the cart
 
-  - intent: checkout
-    examples: |
-      - checkout
-      - proceed to checkout
-      - pay now
-      - I want to complete the order
+nlu:
+
+## --- PRODUCT BROWSING ---
+
+- intent: browse_products
+  examples: |
+    - show me [electronics](category)
+    - I want to browse [laptops](subcategory)
+    - let me see [smartphones](subcategory)
+    - display [bestsellers](flag)
+    - show me [new](flag) products
+    - what [electronics](category) do you have?
+    - browse products
+    - explore items
+
+## --- PRODUCT FILTERING ---
+
+- intent: filter_products
+  examples: |
+    - show me [Apple](brand) [smartphones](subcategory)
+    - I want [Samsung](brand) [laptops](subcategory) under [50000](price)
+    - find [Sony](brand) [headphones](subcategory) below [10000](price)
+    - search for [laptops](subcategory) under [70000](price)
+    - I want to see [Dell](brand) products under [60000](price)
+    - show only [bestsellers](flag) in [mobiles](subcategory)
+    - show [new](flag) [televisions](subcategory)
+    - any [LG](brand) [fridge](subcategory) under [45000](price)
+
+## --- GET PRODUCT DETAILS ---
+
+- intent: get_product_detail
+  examples: |
+    - tell me about the [iPhone 15](item)
+    - show details for [MacBook Pro](item)
+    - I want information on [Samsung Galaxy S23](item)
+    - details of the [Sony WH-1000XM4](item)
+    - describe the [Lenovo Yoga](item)
+    - what can you tell me about [AirPods Pro](item)
+
+## --- ADD TO CART ---
+
+- intent: add_to_cart
+  examples: |
+    - add [2](quantity) [iPhone 15](item) to my cart
+    - put [black hoodie](item) in my cart
+    - I want to buy [3](quantity) [Apple AirPods](item)
+    - add [Samsung Galaxy S23](item) to cart
+    - please add [1](quantity) [MacBook Pro](item)
+    - add [4](quantity) [pens](item) to my shopping bag
+    - I’d like to add [AirPods](item)
+    - add one [laptop](item)
+
+## --- VIEW CART ---
+
+- intent: view_cart
+  examples: |
+    - show my cart
+    - what’s in my shopping cart?
+    - view cart items
+    - show me my basket
+    - display the items in my cart
+    - see my cart
+    - list my cart contents
+    - check my cart
+
+## --- REMOVE ITEM FROM CART ---
+
+- intent: remove_from_cart
+  examples: |
+    - remove [black hoodie](item) from my cart
+    - delete [iPhone 15](item) from the cart
+    - take [AirPods](item) out of my cart
+    - get rid of [shoes](item) in the cart
+    - remove [laptop](item)
+    - take [Samsung Galaxy S23](item) out of the basket
+
+## --- UPDATE CART ITEM QUANTITY ---
+
+- intent: update_cart_quantity
+  examples: |
+    - change [iPhone 15](item) quantity to [2](quantity)
+    - update [laptop](item) quantity to [3](quantity)
+    - set [black hoodie](item) count to [1](quantity)
+    - modify [AirPods](item) quantity to [5](quantity)
+    - adjust [MacBook Pro](item) to [2](quantity)
+    - change quantity of [shoes](item) to [4](quantity)
+
+## --- CLEAR CART ---
+
+- intent: clear_cart
+  examples: |
+    - clear my cart
+    - empty my shopping bag
+    - remove everything from my cart
+    - delete all items from my basket
+    - start fresh in my cart
+    - wipe my cart clean
+    - remove all products from my cart
+
+## --- CHECKOUT / CREATE ORDER ---
+
+- intent: checkout
+  examples: |
+    - checkout
+    - proceed to checkout
+    - pay now
+    - I want to complete the order
+    - finish my purchase
+    - proceed with payment
+    - complete my order
+    - place the order
+    - confirm my purchase
+    - make payment for my cart
+    - I want to place my order
+
+## --- VIEW USER ORDERS ---
+
+- intent: view_my_orders
+  examples: |
+    - show my orders
+    - what orders have I placed?
+    - display my order history
+    - list my past purchases
+    - show previous orders
+    - let me see my orders
+    - view my order records
+    - check my purchase history
+
+## --- ADMIN: VIEW ALL ORDERS ---
+
+- intent: view_all_orders
+  examples: |
+    - show all orders
+    - list all orders
+    - display every order in the system
+    - I want to see all purchases
+    - show all user orders
+    - give me the list of all orders
+    - show every order placed
+
+## --- PRODUCT SEARCH GENERIC ---
+
+- intent: search_product
+  examples: |
+    - search for [laptop](subcategory)
+    - look up [smartphones](subcategory)
+    - find me [wireless headphones](item)
+    - do you have [MacBook Air](item)
+    - are there any [gaming laptops](subcategory)
+
+## --- SYNONYMS ---
+
+- synonym: smartphone
+  examples: |
+    - mobile
+    - cell phone
+    - phone
+    - handset
+
+- synonym: laptop
+  examples: |
+    - notebook
+    - macbook
+
+- synonym: headphones
+  examples: |
+    - earphones
+    - headset
+    - earbuds

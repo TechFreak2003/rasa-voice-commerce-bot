@@ -1,11 +1,56 @@
 version: "3.1"
-rules:
-  - rule: Add item to cart
-    steps:
-      - intent: add_to_cart
-      - action: action_add_to_cart
 
-  - rule: Proceed to checkout
-    steps:
-      - intent: checkout
-      - action: action_checkout
+rules:
+
+
+- rule: Show all products
+  steps:
+    - intent: get_all_products
+    - action: action_get_all_products
+
+- rule: Get single product details
+  steps:
+    - intent: get_product_by_id
+    - action: action_get_product_by_id
+
+
+- rule: Add item to cart
+  steps:
+    - intent: add_to_cart
+    - action: action_add_to_cart
+
+- rule: View cart
+  steps:
+    - intent: view_cart
+    - action: action_view_cart
+
+- rule: Remove item from cart
+  steps:
+    - intent: remove_from_cart
+    - action: action_remove_from_cart
+
+- rule: Update cart item
+  steps:
+    - intent: update_cart_item
+    - action: action_update_cart_item
+
+- rule: Clear cart
+  steps:
+    - intent: clear_cart
+    - action: action_clear_cart
+
+
+- rule: Checkout
+  steps:
+    - intent: checkout
+    - action: action_checkout
+
+- rule: View my orders
+  steps:
+    - intent: view_my_orders
+    - action: action_view_my_orders
+
+- rule: View all orders (admin)
+  steps:
+    - intent: view_all_orders
+    - action: action_view_all_orders

@@ -1,11 +1,27 @@
 version: "3.1"
 
 intents:
+  - browse_products
+  - filter_products
+  - get_product_detail
   - add_to_cart
+  - view_cart
+  - remove_from_cart
+  - update_cart_quantity
+  - clear_cart
   - checkout
+  - view_my_orders
+  - view_all_orders
+  - search_product
 
 entities:
   - item
+  - quantity
+  - category
+  - subcategory
+  - brand
+  - price
+  - flag
 
 slots:
   item:
@@ -15,10 +31,103 @@ slots:
       - type: from_entity
         entity: item
 
+  quantity:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: quantity
+
+  category:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: category
+
+  subcategory:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: subcategory
+
+  brand:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: brand
+
+  price:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: price
+
+  flag:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: flag
+
 actions:
+  - action_browse_products
+  - action_filter_products
+  - action_get_product_detail
   - action_add_to_cart
+  - action_view_cart
+  - action_remove_from_cart
+  - action_update_cart_quantity
+  - action_clear_cart
   - action_checkout
+  - action_view_my_orders
+  - action_view_all_orders
+  - action_search_product
 
 responses:
+
   utter_ask_item:
-    - text: "Which item would you like to add to the cart?"
+    - text: "Which item are you referring to?"
+
+  utter_ask_quantity:
+    - text: "How many would you like?"
+
+  utter_ask_category:
+    - text: "Which category are you interested in?"
+
+  utter_ask_subcategory:
+    - text: "Which subcategory are you looking for?"
+
+  utter_ask_brand:
+    - text: "Any preferred brand?"
+
+  utter_ask_price:
+    - text: "What’s your price range or budget?"
+
+  utter_ask_flag:
+    - text: "Are you looking for new arrivals, bestsellers, or anything specific?"
+
+  utter_cart_empty:
+    - text: "Your cart is currently empty."
+
+  utter_cart_updated:
+    - text: "Your cart has been updated."
+
+  utter_cart_cleared:
+    - text: "Your cart has been cleared."
+
+  utter_no_orders:
+    - text: "You haven’t placed any orders yet."
+
+  utter_order_summary:
+    - text: "Here’s a summary of your order."
+
+  utter_goodbye:
+    - text: "Thanks for shopping with us!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
